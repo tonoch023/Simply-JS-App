@@ -1,27 +1,22 @@
-
-alert('hello world')
-// NOT RECOMMENDED
-var myName = 'Antonio'
-document.write(myName)
-// RECOMMENDED
-var myName = 'Antonio';
-document.write(myName);
-myName = '  John Doe';
-document.write(myName);
-
-// NOT RECOMMENDED
-var myName = 'Fred';document.write(myName);
-
-// RECOMMENDED
-var myName = 'Fred';
-document.write(myName);
-
-//Mathematical Expressions
-var size = 100
-var doubleSize = size * 2
-document.write(doubleSize)
-var product = 2
-var halfSize = size / product
-document.write(halfSize)
-var final = (doubleSize / 2) + (halfSize *2)
-document.write(final)
+var repository = [
+  {
+    name: 'Bulbasaur',
+    height: 7,
+    type: 'Grass'
+ }
+ {
+   name: 'Arbok',
+   height: 3.5,
+   type: 'poison'
+ }
+ {
+   name: 'Nidoking'.
+   height: 1.4 ,
+   type: 'Ground'
+ }
+ {
+   name: 'Scyther'.
+   height: 1.5,
+   type: 'bug'
+ }
+];
