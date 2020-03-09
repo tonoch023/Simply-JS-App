@@ -20,3 +20,11 @@ var pokedexRepository = [
    type: ['Bug','Flying']
  }
 ];
+
+for (var i = 0; i < 4; i++) {
+ document.write(pokedexRepository[i])
+}
+
+for(pokedexRepository) if (height < 1) {
+  'Wow, thats a big one!'
+}
