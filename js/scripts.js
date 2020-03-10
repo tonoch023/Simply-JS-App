@@ -21,6 +21,11 @@ var pokedexRepository = [
  }
 ];
 
-for (i = 0; i < 4; i++) {
-  document.write(pokedexRepository[i].name);
+
+for(i=0;i<4;i++){
+  if(pokedexRepository[i].height > 1){
+    document.write(pokedexRepository[i].name,' Wow thats a big one ', '<br>');
+  } else if (pokedexRepository[i].height < 1) {
+    document.write(pokedexRepository[i].name, ' ', '<br>')
+  }
 }
