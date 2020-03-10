@@ -3,17 +3,17 @@ var pokedexRepository = [
     name: 'Bulbasaur',
     height: 7,
     type: ['Grass','Poison']
- }
+ },
  {
    name: 'Arbok',
    height: 3.5,
    type: ['Poison']
- }
+ },
  {
    name: 'Nidoking',
    height: 1.4,
    type: ['Ground','Poison']
- }
+ },
  {
    name: 'Scyther',
    height: 1.5,
@@ -21,10 +21,9 @@ var pokedexRepository = [
  }
 ];
 
-for (var i = 0; i < 4; i++) {
- document.write(pokedexRepository[i])
+for (i = 0; i < 4; i++) {
+ document.write(pokedexRepository[i].lenght)
 }
-
-for(pokedexRepository) if (height < 1) {
-  'Wow, thats a big one!'
+if (pokedexRepository.height < 1){
+  document.write('wow thats a big one')
 }
