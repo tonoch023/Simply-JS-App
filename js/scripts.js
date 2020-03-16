@@ -35,18 +35,7 @@ var pokedexRepository = (function () {
 })();
 
 
-
-  // function printedArraysDetails(pokemonList){
-  //   for(i=0;i<pokemonList.length  ;i++){
-  //     if(pokedexRepository[i].height > 1){
-  //       document.write(pokemonList[i].name,',',' Wow thats a big one ', '<br>');
-  //     } else if (pokedexRepository[i].height < 1) {
-  //       document.write(pokemonList[i].name, ' ', '<br>');
-  //     }
-  //   }
-  // }
-
-  pokedexRepository.getAll.forEach(function(currentName){
+  pokedexRepository.getAll().forEach(function(currentName){
     if (currentName.height > 1){
       document.write(currentName.name, ' Wow, thats a big one!', '<br>');
     }else if(currentName.height< 1){
