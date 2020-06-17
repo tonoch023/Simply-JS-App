@@ -66,7 +66,7 @@
     function showDetails (pokemon){
       console.log(pokemon)
     }
-   addListItem();
+   addListItem(pokemon);
    pokedexRepository.map(addListItem);
    pokedexRepository.forEach(addListItem(currentName));
     }});
