@@ -23,7 +23,7 @@
   ];
 
 
-    var pokedexRepository2 = [
+    let pokedexRepository2 = [
       {
         name: 'Charizard',
         height: 2.5,
@@ -48,8 +48,7 @@
   // }
 
   pokedexRepository.forEach(function(currentName){
-    //This function let us add new pokemon
-    let $ul = document.querySelector('.pokemonList');
+    let $ul = document.querySelector('.pokemonList');    //This function is inside the forEach as marked but i can make the pokemons to show up
 
     function addListItem (pokemon) {
       let $li = document.createElement('li');
@@ -62,13 +61,35 @@
         console.log(pokemon);
       })
     }
-     //This function details the pokemon features
-    function showDetails (pokemon){
+     
+    function showDetails (pokemon){                               //This function details the pokemon features
       console.log(pokemon)
     }
    addListItem(pokemon);
    pokedexRepository.map(addListItem);
    pokedexRepository.forEach(addListItem(currentName));
     }});
+
+    let $ul = document.querySelector('.pokemonList');
+
+    function addListItem (pokemon) {                                    // Here i put the function block ouside to see if it works but nothing
+      let $li = document.createElement('li');
+      let $btn = document.createElement('button');
+      $btn.classList.add('btn');
+      $btn.innerText = `${currentName.name}`;
+      $li.append($btn);
+      $ul.append($li);
+      $btn.addEventListener('click', showDetails(pokemon){
+        console.log(pokemon);
+      })
+    }
+    function showDetails (pokemon){
+      console.log(pokemon)
+    }
+
+    addListItem(pokedexRepository);
+
+  
+
 
 
