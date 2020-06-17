@@ -1,5 +1,5 @@
 
-  var pokedexRepository = [
+  let pokedexRepository = [
     {
       name: 'Bulbasaur',
       height: .7,
@@ -48,43 +48,27 @@
   // }
 
   pokedexRepository.forEach(function(currentName){
-    if (currentName.height > 1){
-      document.write(currentName.name, ' Wow, thats a big one!', '<br>');
-    }else if(currentName.height< 1){
-      document.write(currentName.name, '<br>');
+    //This function let us add new pokemon
+    let $ul = document.querySelector('.pokemonList');
+
+    function addListItem (pokemon) {
+      let $li = document.createElement('li');
+      let $btn = document.createElement('button');
+      $btn.classList.add('btn');
+      $btn.innerText = `${currentName.name}`;
+      $li.append($btn);
+      $ul.append($li);
+      $btn.addEventListener('click', showDetails(pokemon){
+        console.log(pokemon);
+      })
+    }
+     //This function details the pokemon features
+    function showDetails (pokemon){
+      console.log(pokemon)
+    }
+   addListItem();
+   pokedexRepository.map(addListItem);
+   pokedexRepository.forEach(addListItem(currentName));
     }});
 
 
-
-  var names = ['John', 'Anne', 'Carly'];
-
-  function loopBlockFunction(currentName){
-    console.log(currentName);
-  }
-  names.forEach(loopBlockFunction);
-
-  var anne = {
-  name: 'Anne',
-  age: 38,
-  children: []
-};
-
-Object.keys(anne).forEach(function(property) {
-  console.log(anne[property]);
-});
-
-  printedArraysDetails(pokedexRepository2);                                                                  document.write('<br>');  //line break
-  printedArraysDetails(pokedexRepository);
-
-
-function div(dividend, divisor){
-  if ( divisor === 0){
-    return "Youre trying to divided by zero"
-  }else{
-    var result= dividend / divisor;
-    return result
-  }
-}
-
-console.log(div(10,0));
-console.log(div(10,5));

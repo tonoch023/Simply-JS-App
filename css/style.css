@@ -6,3 +6,12 @@
   margin: 30px;
   padding-top: 30px;
 }
+
+.btn{
+  width: 100%;
+  background: rgb(240, 160, 11);
+  border: 0;
+  border-radius: .4em;
+  color:white;
+}
+
