@@ -2,15 +2,42 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   //Function to add pokemon to repository
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    //Must be an 'object' type
+    if (typeof pokemon !== 'object') {
+      return 'Not a valid input';
+    } else {
+      pokemonList.push(pokemon);
+    }
   }
   //Function to return repository
   function getAll() {
     return pokemonList;
   }
+
+  function addListItem(pokemon) {
+    const $ul = document.querySelector('ul');
+    let $li = document.createElement('li');
+    let $button = document.createElement('ul');
+    $ul.appendChild($li);
+    $li.appendChild($button);
+    $button.innerText = pokemon.name;
+    $button.classList.add('btn');
+    $button.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
+  }
+
+  function showDetails(pokemon) {
+    console.log(
+      `Name: ${pokemon.name}  Height:  ${pokemon.height}  Ability:${pokemon.abilities}  Type: ${pokemon.types}`
+    );
+  }
+
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails,
   };
 })();
 // cSpell: disable
@@ -47,17 +74,6 @@ pokemonRepository.add(charizard);
 pokemonRepository.add(Charmander);
 pokemonRepository.add(Squirtle);
 
-const $ul = document.querySelector('ul');
-
-pokemonRepository.getAll().forEach((pokemon) => {
-  let name = pokemon.name;
-  let height = pokemon.height;
-
-  let $li = document.createElement('li');
-  $ul.appendChild($li);
-
-  let $button = document.createElement('ul');
-  $li.appendChild($button);
-  $button.innerText = name;
-  $button.classList.add('btn');
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
