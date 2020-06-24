@@ -1,0 +1,36 @@
+$primary-color: rgb(15, 108, 214);
+$secondary-color: #444;
+$bg: #eee;
+$bg-list: #ddd;
+
+body {
+  font-size: 2em;
+  background: $bg;
+}
+
+.list {
+  background-color: $bg-list;
+  margin: 0 auto;
+  color: $secondary-color;
+  width: 500px;
+  margin-top: 5em;
+}
+
+.btn {
+  background-color: $primary-color;
+  border-radius: 0.4em;
+  width: 200px;
+  border: none;
+  color: #eee;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  li {
+    padding: 0.5em;
+    font-family: 'Oswald', 'sans-seriff';
+  }
+}

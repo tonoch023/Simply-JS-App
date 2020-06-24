@@ -1,95 +1,63 @@
+let pokemonRepository = (function () {
+  let pokemonList = [];
+  //Function to add pokemon to repository
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+  //Function to return repository
+  function getAll() {
+    return pokemonList;
+  }
+  return {
+    add: add,
+    getAll: getAll,
+  };
+})();
+// cSpell: disable
+const ivysaur = {
+  name: 'Ivysaur',
+  height: 1,
+  abilities: ['Chlorophyll'],
+  types: ['Grass'],
+};
 
-  let pokedexRepository = [
-    {
-      name: 'Bulbasaur',
-      height: .7,
-      type: ['Grass','Poison']
-   },
-   {
-     name: 'Arbok',
-     height: 3.5,
-     type: ['Poison']
-   },
-   {
-     name: 'Nidoking',
-     height: 1.4,
-     type: ['Ground','Poison']
-   },
-   {
-     name: 'Scyther',
-     height: 1.5,
-     type: ['Bug','Flying']
-   }
-  ];
+const charizard = {
+  name: 'Charizard',
+  height: 1.7,
+  abilities: ['Blaze'],
+  types: ['Fire'],
+};
 
+const Charmander = {
+  name: 'Charmander',
+  height: 2.0,
+  abilities: ['Blaze', 'Solar-power'],
+  types: ['Fire'],
+};
 
-    let pokedexRepository2 = [
-      {
-        name: 'Charizard',
-        height: 2.5,
-        type: ['Fire','Flying']
-     },
-     {
-       name: 'Pikachu',
-       height: .5,
-       type: ['Electric']
-     }
-   ];
+const Squirtle = {
+  name: 'Squirtle',
+  height: 0.5,
+  abilities: ['Rain-dish', 'Torrent'],
+  types: ['Monster', 'Water  1'],
+};
 
+pokemonRepository.add(ivysaur);
+pokemonRepository.add(charizard);
+pokemonRepository.add(Charmander);
+pokemonRepository.add(Squirtle);
 
-  // function printedArraysDetails(pokemonList){
-  //   for(i=0;i<pokemonList.length  ;i++){
-  //     if(pokedexRepository[i].height > 1){
-  //       document.write(pokemonList[i].name,',',' Wow thats a big one ', '<br>');
-  //     } else if (pokedexRepository[i].height < 1) {
-  //       document.write(pokemonList[i].name, ' ', '<br>');
-  //     }
-  //   }
-  // }
+const $ul = document.querySelector('ul');
 
-  pokedexRepository.forEach(function(currentName){
-    let $ul = document.querySelector('.pokemonList');    //This function is inside the forEach as marked but i can make the pokemons to show up
+pokemonRepository.getAll().forEach((pokemon) => {
+  let name = pokemon.name;
+  let height = pokemon.height;
 
-    function addListItem (pokemon) {
-      let $li = document.createElement('li');
-      let $btn = document.createElement('button');
-      $btn.classList.add('btn');
-      $btn.innerText = `${currentName.name}`;
-      $li.append($btn);
-      $ul.append($li);
-      $btn.addEventListener('click', showDetails(pokemon){
-        console.log(pokemon);
-      })
-    }
-     
-    function showDetails (pokemon){                               //This function details the pokemon features
-      console.log(pokemon)
-    }
-   addListItem(pokemon);
-   pokedexRepository.map(addListItem);
-   pokedexRepository.forEach(addListItem(currentName));
-    }});
+  let $li = document.createElement('li');
+  $ul.appendChild($li);
 
-    let $ul = document.querySelector('.pokemonList');
-
-    function addListItem (pokemon) {                                    // Here i put the function block ouside to see if it works but nothing
-      let $li = document.createElement('li');
-      let $btn = document.createElement('button');
-      $btn.classList.add('btn');
-      $btn.innerText = `${currentName.name}`;
-      $li.append($btn);
-      $ul.append($li);
-      $btn.addEventListener('click', showDetails(pokemon){
-        console.log(pokemon);
-      })
-    }
-    function showDetails (pokemon){
-      console.log(pokemon)
-    }
-
-    addListItem(pokedexRepository);
-
-  
-
-
-
+  let $button = document.createElement('ul');
+  $li.appendChild($button);
+  $button.innerText = name;
+  $button.classList.add('btn');
+});
